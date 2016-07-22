@@ -26,7 +26,7 @@ var HopChart = function ( hopMap ) {
 
     series: [
       {
-        name: "Type",
+        name: "Weight (g)",
         data: hopMap
       }
     ]

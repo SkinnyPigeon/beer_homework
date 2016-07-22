@@ -26,7 +26,7 @@ var MaltChart = function ( maltMap ) {
 
     series: [
       {
-        name: "Type",
+        name: "Weight (kg)",
         data: maltMap
       }
     ]
