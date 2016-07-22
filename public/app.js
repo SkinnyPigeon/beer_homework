@@ -59,15 +59,25 @@ var updateDisplay = function ( beer ) {
 var displayRecipe = function( beer ) {
   var ingredients = document.getElementById('recipe');
 
+  state.beer.ingredients.malt.forEach( function( malt, index ) {
+    var p = document.createElement( 'p' );
+    p.id = "malt";
+    p.innerHTML = malt.name + ": " + malt.amount.value + "kg";
+    ingredients.appendChild( p );
+  })
 
 
-
-  state.beer.ingredients.hops.forEach( function(hop, index) {
-    var p = document.createElement( 'p' )
-    p.id = "hops"
+  state.beer.ingredients.hops.forEach( function( hop, index ) {
+    var p = document.createElement( 'p' );
+    p.id = "hops";
     p.innerHTML = hop.name + ": "+ hop.amount.value + "g" + "<br>" + "Add at: " + hop.add;
-    ingredients.appendChild(p)
+    ingredients.appendChild( p );
   });
+
+  var p = document.createElement( 'p' );
+  p.id = "yeast";
+  p.innerHTML = beer.ingredients.yeast
+  ingredients.appendChild( p )
 
 
 }
