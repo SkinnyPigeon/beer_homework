@@ -2,7 +2,8 @@ body {
   padding-left: 20px;
   font-family: 'Carrois Gothic', sans-serif;
   font-size: 1.35em;
-  background: linear-gradient(135deg, rgba(247,249,251,1) 0%,rgba(224,228,230,1) 100%); 
+  background: linear-gradient(135deg, rgba(247,249,251,1) 0%,rgba(224,228,230,1) 100%);
+  color: #191919; 
 }
 
 /*b {
@@ -12,6 +13,15 @@ body {
 h4 {
   font-family: 'Open Sans', sans-serif;
 }*/
+
+select {
+  font-size: 20px;
+  background-color: #191919;
+  color: white;
+  display: block;
+  margin: 10px;
+  float: left;
+}
 
 #movingBanner {
   position: fixed;
@@ -26,9 +36,11 @@ h4 {
 }
 
 #logo {
+  /*position: fixed;*/
   display: block;
   width: 50px;
-  margin: 0 auto;
+  float: right;
+  margin-right: 20px;
 }
 
 #banner {
@@ -51,7 +63,7 @@ h4 {
 }
 
 #main {
-  padding-top: 225px;
+  padding-top: 250px;
 }
 
 #maltDiv {
@@ -107,3 +119,4 @@ h4 {
   max-height: 45%;
   max-width: 45%;
 }
+
