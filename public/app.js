@@ -4,7 +4,8 @@ var state = {
   basket: [],
   malts: [],
   hops: [],
-  yeast: []
+  yeast: [],
+  index: 0
 }
 
 
@@ -27,26 +28,31 @@ window.onload = function() {
       main()
     }
     console.log( state.beers )
-
   }
-
   request.send(null);
-
 }
 
 var main = function() {
 
+  state.beer = JSON.parse( localStorage.getItem( "saved_beer" ) ) || [];
+  updateDisplay( state.beer )
+  displayRecipe( state.beer )
+
   var beerSelect = document.getElementById( "beerSelect" );
-  var recipeSelect = document.getElementById( "recipe-button" )
   state.beers.forEach( function( beer, index ) {
     var option = document.createElement( 'option' );
     option.innerText = beer.name;
     option.value = index;
-
     beerSelect.appendChild( option )
+    if( beer.name === state.beer.name ){
+      state.index = index
+    }
   }) 
 
+  beerSelect.value = state.index 
+
   beerSelect.onchange = function( event ) {
+
     var index = event.target.value 
     state.beer = state.beers[index]
     updateDisplay( state.beer )
@@ -55,7 +61,6 @@ var main = function() {
     state.hops = []
     state.yeast = []
   }
-
 }
 
 var updateDisplay = function ( beer ) {
@@ -63,6 +68,7 @@ var updateDisplay = function ( beer ) {
   tags[0].innerText = "Blurb: " + beer.tagline;
   tags[1].innerText = "Description: " + beer.description;
   tags[2].innerText = "ABV: " + beer.abv + "%";
+  localStorage.setItem( "saved_beer" , JSON.stringify( beer ) );
 }
 
 var displayRecipe = function( beer ) {
