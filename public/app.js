@@ -40,9 +40,6 @@ var main = function() {
     var index = event.target.value 
     state.beer = state.beers[index]
     updateDisplay( state.beer )
-  }
-
-  recipeSelect.onclick = function( beer, event ) {
     displayRecipe( state.beer )
   }
 
@@ -57,28 +54,32 @@ var updateDisplay = function ( beer ) {
 }
 
 var displayRecipe = function( beer ) {
-  var ingredients = document.getElementById('recipe');
-
+  var recipe = document.getElementById( 'recipe' )
+  recipe.style.display = 'block'
+  var malts = document.getElementById( 'malts' );
+  malts.innerHTML = ""
   state.beer.ingredients.malt.forEach( function( malt, index ) {
     var p = document.createElement( 'p' );
     p.id = "malt";
     p.innerHTML = malt.name + ": " + malt.amount.value + "kg";
-    ingredients.appendChild( p );
+    malts.appendChild( p );
   })
 
-
+  var hops = document.getElementById( 'hops' );
+  hops.innerHTML = ""
   state.beer.ingredients.hops.forEach( function( hop, index ) {
     var p = document.createElement( 'p' );
     p.id = "hops";
     p.innerHTML = hop.name + ": "+ hop.amount.value + "g" + "<br>" + "Add at: " + hop.add;
-    ingredients.appendChild( p );
+    hops.appendChild( p );
   });
 
+  var yeast = document.getElementById( 'yeast' )
+  yeast.innerHTML = ""
   var p = document.createElement( 'p' );
   p.id = "yeast";
   p.innerHTML = beer.ingredients.yeast
-  ingredients.appendChild( p )
-
+  yeast.appendChild( p )
 
 }
 
