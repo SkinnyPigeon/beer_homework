@@ -30,7 +30,5 @@ var MaltChart = function ( maltMap ) {
         data: maltMap
       }
     ]
-
   })
-console.log( chart )
 } 

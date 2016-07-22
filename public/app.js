@@ -8,6 +8,10 @@ var state = {
 }
 
 
+var capitalize = function( string ) {
+  return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
 window.onload = function() {
   console.log( 'app started' )
   var url = "https://punkapi.com/api/v1/beers"
@@ -22,6 +26,8 @@ window.onload = function() {
       state.beers = JSON.parse(jsonString);
       main()
     }
+    console.log( state.beers )
+
   }
 
   request.send(null);
@@ -83,17 +89,16 @@ var displayRecipe = function( beer ) {
   state.beer.ingredients.hops.forEach( function( hop, index ) {
     var p = document.createElement( 'p' );
     p.id = "hops";
-    p.innerHTML = hop.name + ": "+ hop.amount.value + "g" + "<br>" + "Add at: " + hop.add;
+    p.innerHTML = hop.name + ": "+ hop.amount.value + "g" + "<br>" + "To be added at: " + capitalize( hop.add );
     hops.appendChild( p );
     state.hops.push( { name: hop.name, amount: hop.amount.value } )
   });
 
   var hopMap = state.beer.ingredients.hops.map( function( hop ) {
-    return { name: hop.name, y: hop.amount.value, sliced: true }
+    return { name: hop.name + ": " + capitalize( hop.add ), y: hop.amount.value, sliced: true }
   })
 
   new HopChart( hopMap )
-
 
   var yeast = document.getElementById( 'yeast' )
   yeast.innerHTML = ""
@@ -102,7 +107,6 @@ var displayRecipe = function( beer ) {
   p.innerHTML = beer.ingredients.yeast
   yeast.appendChild( p )
   state.yeast.push( { name: beer.ingredients.yeast } )
-
 
 }
 

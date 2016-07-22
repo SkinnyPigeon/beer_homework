@@ -32,5 +32,4 @@ var HopChart = function ( hopMap ) {
     ]
 
   })
-console.log( chart )
 } 
