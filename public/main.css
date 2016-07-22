@@ -48,3 +48,15 @@ body {
   display: inline-block;
   vertical-align: top;
 }
+
+#maltChart {
+  display: inline-block;
+  max-height: 45%;
+  max-width: 45%;
+}
+
+#hopChart {
+  display: inline-block;
+  max-height: 45%;
+  max-width: 45%;
+}
