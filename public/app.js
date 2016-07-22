@@ -65,9 +65,9 @@ var main = function() {
 
 var updateDisplay = function ( beer ) {
   var tags = document.querySelectorAll('#info p');
-  tags[0].innerText = "Blurb: " + beer.tagline;
-  tags[1].innerText = "Description: " + beer.description;
-  tags[2].innerText = "ABV: " + beer.abv + "%";
+  tags[0].innerHTML = "<b>Blurb: </b>" + beer.tagline;
+  tags[1].innerHTML = "<b>Description: </b>" + beer.description;
+  tags[2].innerHTML = "<b>ABV: </b>" + beer.abv + "%";
   localStorage.setItem( "saved_beer" , JSON.stringify( beer ) );
 }
 
@@ -95,7 +95,8 @@ var displayRecipe = function( beer ) {
   state.beer.ingredients.hops.forEach( function( hop, index ) {
     var p = document.createElement( 'p' );
     p.id = "hops";
-    p.innerHTML = hop.name + ": "+ hop.amount.value + "g" + "<br>" + "To be added at: " + capitalize( hop.add );
+    p.innerHTML = capitalize( hop.add ) + ": " + hop.amount.value + "g " + hop.name
+    // h.innerHTML = hop.amount.value + "g";
     hops.appendChild( p );
     state.hops.push( { name: hop.name, amount: hop.amount.value } );
   });
