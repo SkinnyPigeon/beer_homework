@@ -76,7 +76,6 @@ var displayRecipe = function( beer ) {
     return { name: malt.name, y: malt.amount.value, sliced: true }
   })
   new MaltChart( maltMap )
-  console.log( maltMap )
 
 
   var hops = document.getElementById( 'hops' );
@@ -88,6 +87,12 @@ var displayRecipe = function( beer ) {
     hops.appendChild( p );
     state.hops.push( { name: hop.name, amount: hop.amount.value } )
   });
+
+  var hopMap = state.beer.ingredients.hops.map( function( hop ) {
+    return { name: hop.name, y: hop.amount.value, sliced: true }
+  })
+
+  new HopChart( hopMap )
 
 
   var yeast = document.getElementById( 'yeast' )

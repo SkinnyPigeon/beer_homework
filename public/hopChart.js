@@ -1,4 +1,4 @@
-var HopChart = function ( hops ) {
+var HopChart = function ( hopMap ) {
 
   var container = document.getElementById( "hopChart" );
 
@@ -7,41 +7,27 @@ var HopChart = function ( hops ) {
     chart: {
       type: 'pie',
       renderTo: container,
+      options3d: {
+          enabled: true,
+          alpha: 45
+      }
     },
 
     title: {
-      text: "Pokemon Types I've Caught. Kill Kill Kill"
+      text: "Hops"
+    },
+
+    plotOptions: {
+        pie: {
+            innerSize: 100,
+            depth: 45
+        }
     },
 
     series: [
       {
         name: "Type",
-        data: [
-          {
-            name: "Fire",
-            y: 74,
-            color: "#ffac33"
-          },
-
-          {
-            name: "Water",
-            y: 25,
-            color: "#73b7ff",
-            sliced: true
-
-          },
-          {
-            name: "Grass",
-            y: 1,
-            color: "#00ba2f"
-          },
-          {
-            name: "Fairy",
-            y: 25,
-            color: "#000"
-          }
-
-        ]
+        data: hopMap
       }
     ]
 
