@@ -6,14 +6,6 @@ body {
   color: #191919; 
 }
 
-/*b {
-  font-family: 'Open Sans', sans-serif;
-}
-
-h4 {
-  font-family: 'Open Sans', sans-serif;
-}*/
-
 select {
   font-size: 20px;
   background-color: #191919;
@@ -36,7 +28,6 @@ select {
 }
 
 #logo {
-  /*position: fixed;*/
   display: block;
   width: 50px;
   float: right;
@@ -119,4 +110,12 @@ select {
   max-height: 45%;
   max-width: 45%;
 }
+
+/*b {
+  font-family: 'Open Sans', sans-serif;
+}
+
+h4 {
+  font-family: 'Open Sans', sans-serif;
+}*/
 

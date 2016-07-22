@@ -156,12 +156,8 @@ var displayRecipe = function( beer ) {
     p.id = "twist";
     p.innerHTML = beer.method.twist;
     notes.appendChild( p );
-  }
-
-
-
-
-}
+  };
+};
 
 
 
