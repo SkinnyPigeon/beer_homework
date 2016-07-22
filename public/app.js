@@ -1,6 +1,10 @@
 var state = {
   beers: [],
-  beer: 0
+  beer: 0,
+  basket: [],
+  malts: [],
+  hops: [],
+  yeast: []
 }
 
 
@@ -41,6 +45,9 @@ var main = function() {
     state.beer = state.beers[index]
     updateDisplay( state.beer )
     displayRecipe( state.beer )
+    state.malts = []
+    state.hops = []
+    state.yeast = []
   }
 
 }
@@ -50,7 +57,6 @@ var updateDisplay = function ( beer ) {
   tags[0].innerText = "Blurb: " + beer.tagline;
   tags[1].innerText = "Description: " + beer.description;
   tags[2].innerText = "ABV: " + beer.abv + "%";
-  console.log( beer )        
 }
 
 var displayRecipe = function( beer ) {
@@ -63,7 +69,15 @@ var displayRecipe = function( beer ) {
     p.id = "malt";
     p.innerHTML = malt.name + ": " + malt.amount.value + "kg";
     malts.appendChild( p );
+    state.hops.push( { name: malt.name, amount: malt.amount.value } )
   })
+
+  var maltMap = state.beer.ingredients.malt.map( function( malt ) {
+    return { name: malt.name, y: malt.amount.value, sliced: true }
+  })
+  new MaltChart( maltMap )
+  console.log( maltMap )
+
 
   var hops = document.getElementById( 'hops' );
   hops.innerHTML = ""
@@ -72,7 +86,9 @@ var displayRecipe = function( beer ) {
     p.id = "hops";
     p.innerHTML = hop.name + ": "+ hop.amount.value + "g" + "<br>" + "Add at: " + hop.add;
     hops.appendChild( p );
+    state.hops.push( { name: hop.name, amount: hop.amount.value } )
   });
+
 
   var yeast = document.getElementById( 'yeast' )
   yeast.innerHTML = ""
@@ -80,8 +96,12 @@ var displayRecipe = function( beer ) {
   p.id = "yeast";
   p.innerHTML = beer.ingredients.yeast
   yeast.appendChild( p )
+  state.yeast.push( { name: beer.ingredients.yeast } )
+
 
 }
+
+
 
 
 
