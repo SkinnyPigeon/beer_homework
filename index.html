@@ -10,54 +10,66 @@
   <script src="hopChart.js"></script>
   <script src="app.js"></script>
 </head>
+<header>
+</header>
 <body>
-  <select id="beerSelect"></select>
-  <div id="info">
-    <p></p>
-    <p></p>
-    <p></p>
+
+  <div id="movingBanner">
+    <img id="logo" src="images/logo.png" alt="logo">
   </div>
-  <div id="recipe" style="display:none">
-
-    <div id='maltDiv'>
-      <h4>Malts</h4>
-      <div id ="malts"></div>
-    </div>
-
-    <div id='hopDiv'>
-      <h4>Hops</h4>
-      <div id="hops"></div>
-    </div>
-
-    <div id='yeastDiv'>
-      <h4>Yeast</h4>
-      <div id="yeast"></div>
-    </div>
-
-    <div id='tempDiv'>
-      <h4>Mash Temp</h4>
-      <div id="mash-temp"></div>
-    </div>
-
-    <div id='timeDiv'>
-      <h4>Mash Time</h4>
-      <div id="mash-time"></div>
-    </div>
-
-    <div id='oGDiv'>
-      <h4>Target OG</h4>
-      <div id="oG"></div>
-    </div>
-
-    <div id='noteDiv'>
-      <h4>Extra Notes</h4>
-      <div id="notes"></div>
-    </div>
-
+  <div id="banner">
+    <img id="bannerImg" src="images/banner.png" alt="banner""> 
   </div>
-  <div id="charts">
-    <div id="maltChart"></div>
-    <div id="hopChart"></div>
+
+  <div id="main">
+    <select id="beerSelect"></select>
+    <div id="info">
+      <p></p>
+      <p></p>
+      <p></p>
+    </div>
+    <div id="recipe" style="display:none">
+
+      <div id='maltDiv'>
+        <h4>Malts</h4>
+        <div id ="malts"></div>
+      </div>
+
+      <div id='hopDiv'>
+        <h4>Hops</h4>
+        <div id="hops"></div>
+      </div>
+
+      <div id='yeastDiv'>
+        <h4>Yeast</h4>
+        <div id="yeast"></div>
+      </div>
+
+      <div id='tempDiv'>
+        <h4>Mash Temp</h4>
+        <div id="mash-temp"></div>
+      </div>
+
+      <div id='timeDiv'>
+        <h4>Mash Time</h4>
+        <div id="mash-time"></div>
+      </div>
+
+      <div id='oGDiv'>
+        <h4>Target OG</h4>
+        <div id="oG"></div>
+      </div>
+
+      <div id='noteDiv'>
+        <h4>Extra Notes</h4>
+        <div id="notes"></div>
+      </div>
+
+    </div>
+    <div id="charts">
+      <div id="maltChart"></div>
+      <div id="hopChart"></div>
+    </div>
   </div>
 </body>
 </html>

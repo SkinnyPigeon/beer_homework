@@ -7,6 +7,7 @@ var MaltChart = function ( maltMap ) {
     chart: {
       type: 'pie',
       renderTo: container,
+      backgroundColor: "transparent",
       options3d: {
           enabled: true,
           alpha: 45
@@ -29,6 +30,10 @@ var MaltChart = function ( maltMap ) {
         name: "Weight (kg)",
         data: maltMap
       }
-    ]
+    ],
+
+    credits: {
+      enabled: false
+    },
   })
 } 

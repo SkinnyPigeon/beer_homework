@@ -8,7 +8,6 @@ var state = {
   index: 0
 }
 
-
 var capitalize = function( string ) {
   return string.charAt(0).toUpperCase() + string.slice(1);
 }
@@ -26,11 +25,11 @@ window.onload = function() {
       var jsonString = request.responseText;
       state.beers = JSON.parse(jsonString);
       main();
-    }
+    };
     console.log( state.beers );
-  }
+  };
   request.send(null);
-}
+};
 
 var main = function() {
 
@@ -69,7 +68,7 @@ var updateDisplay = function ( beer ) {
   tags[1].innerHTML = "<b>Description: </b>" + beer.description;
   tags[2].innerHTML = "<b>ABV: </b>" + beer.abv + "%";
   localStorage.setItem( "saved_beer" , JSON.stringify( beer ) );
-}
+};
 
 var displayRecipe = function( beer ) {
   var recipe = document.getElementById( 'recipe' );
@@ -96,7 +95,6 @@ var displayRecipe = function( beer ) {
     var p = document.createElement( 'p' );
     p.id = "hops";
     p.innerHTML = capitalize( hop.add ) + ": " + hop.amount.value + "g " + hop.name
-    // h.innerHTML = hop.amount.value + "g";
     hops.appendChild( p );
     state.hops.push( { name: hop.name, amount: hop.amount.value } );
   });

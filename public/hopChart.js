@@ -7,6 +7,7 @@ var HopChart = function ( hopMap ) {
     chart: {
       type: 'pie',
       renderTo: container,
+      backgroundColor: "transparent",
       options3d: {
           enabled: true,
           alpha: 45
@@ -29,7 +30,11 @@ var HopChart = function ( hopMap ) {
         name: "Weight (g)",
         data: hopMap
       }
-    ]
+    ],
+
+    credits: {
+      enabled: false
+    },
 
   })
 } 
