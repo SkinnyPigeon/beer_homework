@@ -159,12 +159,3 @@ var displayRecipe = function( beer ) {
   };
 };
 
-
-
-
-
-
-
-
-
-
