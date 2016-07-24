@@ -6,6 +6,7 @@ var state = {
   hops: [],
   savedHops: "",
   yeast: [],
+  altHops: [],
   index: 0
 }
 
@@ -844,6 +845,7 @@ var main = function() {
     state.malts = [];
     state.hops = [];
     state.yeast = [];
+    state.altHops = [];
   };
 };
 
@@ -956,21 +958,23 @@ var hopSearch = function( hopToSearch ) {
 
 
 var searchAlpha = function( hopToSearch ) {
+  var altHops = document.getElementById('altHops');
+  altHops.innerHTML = ""
   for( alphaSearch of state.savedHops.data ) {
     if( (hopToSearch.alphaAcidMin < ( alphaSearch.alphaAcidMin + 1 )) && (hopToSearch.alphaAcidMin > ( alphaSearch.alphaAcidMin - 1 ))) {
       if( alphaSearch.name != hopToSearch.name){
         var resultHop = alphaSearch
+        var p = document.createElement( 'p' );
+        p.innerHTML = resultHop.name
+        altHops.appendChild( p )
       }
     }
   }
-      console.log( resultHop )      
-  
+  console.log( resultHop.name )
 }
 
 
-// var displayHops = function( resultAlpha ) {
 
-// }
 
 
 
