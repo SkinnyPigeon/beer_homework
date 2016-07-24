@@ -56,6 +56,37 @@ a{
   width: 40px;
 }
 
+#box {
+  display: inline-block;
+  width: 15%;
+  float: right;
+  top: 15px;
+  vertical-align: middle;
+}
+
+#movingBanner #sign {
+  display: inline-block;
+  float: right;
+  font-size: 15px;
+  vertical-align: middle;
+  position: relative;
+  top: 15px;
+}
+
+#movingBanner #basket {
+  display: inline-block;
+  float: right;
+  font-size: 15px;
+  vertical-align: middle;
+  position: relative;
+  top: 15px;
+}
+
+
+
+
+
+
 #banner {
   position: absolute;
   width: 97.15%;
@@ -88,7 +119,6 @@ a{
   left: 0;
   margin: 0 auto; 
   font-size: 1.1em;
-
 }
 
 
@@ -98,7 +128,6 @@ a{
   top: 50px;
   left: 0;
 }
-
 
 
 #main {
@@ -158,6 +187,9 @@ a{
   max-height: 45%;
   max-width: 45%;
 }
+
+
+
 
 
 
