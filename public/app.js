@@ -96,6 +96,7 @@ var displayRecipe = function( beer ) {
   var hops = document.getElementById( 'hops' );
   hops.innerHTML = "";
   state.beer.ingredients.hops.forEach( function( hop, index ) {
+    hopSearch( hop )
     var p = document.createElement( 'p' );
     p.id = "hops";
     p.innerHTML = capitalize( hop.add ) + ": " + hop.amount.value + "g " + hop.name
@@ -164,10 +165,12 @@ var displayRecipe = function( beer ) {
 };
 
 var hopSearch = function( hopToSearch ) {
-  for( hop of state.savedHops.data ) {
-    if( hopToSearch === hop.name ) {
-      return "hello"
-    } 
+  for( searchHop of state.savedHops.data ) {
+    if( hopToSearch.name === searchHop.name ) {
+      console.log("hello")
+    } else {
+      console.log("goodbye")
+    }
   }
 } 
 
