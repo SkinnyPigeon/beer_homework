@@ -56,36 +56,30 @@ a{
   width: 40px;
 }
 
-#box {
-  display: inline-block;
-  width: 15%;
-  float: right;
-  top: 15px;
-  vertical-align: middle;
-}
-
 #movingBanner #sign {
   display: inline-block;
-  float: right;
   font-size: 15px;
+  font-weight: bold;
   vertical-align: middle;
   position: relative;
-  top: 15px;
+  padding-left: 85px;
 }
 
 #movingBanner #basket {
   display: inline-block;
-  float: right;
   font-size: 15px;
+  font-weight: bold;
   vertical-align: middle;
   position: relative;
-  top: 15px;
+  padding-left: 10px;
 }
 
-
-
-
-
+#movingBanner #box {
+  display: inline-block;
+  padding-left: 0px;
+  top: 15px;
+  vertical-align: middle;
+}
 
 #banner {
   position: absolute;
