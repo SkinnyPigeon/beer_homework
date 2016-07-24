@@ -9,6 +9,8 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "express": "^4.14.0"
+    "brewerydb-node": "0.0.1",
+    "express": "^4.14.0",
+    "request": "^2.74.0"
   }
 }

@@ -3,7 +3,7 @@ var state = {
   beer: 0,
   basket: [],
   malts: [],
-  hops: [],
+  hops: "",
   yeast: [],
   index: 0
 }
@@ -15,8 +15,10 @@ var capitalize = function( string ) {
 window.onload = function() {
   console.log( 'app started' );
   var url = "https://punkapi.com/api/v1/beers";
-
+  
+  
   var request = new XMLHttpRequest();
+  var hopRequest = new XMLHttpRequest();
   request.open("GET", url);
   request.setRequestHeader( 'Authorization','Basic ' + btoa('99fda1f72f51428aa5ab92b80c6e3878' ) );
 
@@ -80,7 +82,7 @@ var displayRecipe = function( beer ) {
     p.id = "malt";
     p.innerHTML = malt.name + ": " + malt.amount.value + "kg";
     malts.appendChild( p );
-    state.hops.push( { name: malt.name, amount: malt.amount.value } );
+    // state.hops.push( { name: malt.name, amount: malt.amount.value } );
   });
 
   var maltMap = state.beer.ingredients.malt.map( function( malt ) {
@@ -96,7 +98,7 @@ var displayRecipe = function( beer ) {
     p.id = "hops";
     p.innerHTML = capitalize( hop.add ) + ": " + hop.amount.value + "g " + hop.name
     hops.appendChild( p );
-    state.hops.push( { name: hop.name, amount: hop.amount.value } );
+    // state.hops.push( { name: hop.name, amount: hop.amount.value } );
   });
 
   var hopMap = state.beer.ingredients.hops.map( function( hop ) {
