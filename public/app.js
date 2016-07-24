@@ -957,16 +957,19 @@ var hopSearch = function( hopToSearch ) {
 
 var searchAlpha = function( hopToSearch ) {
   for( alphaSearch of state.savedHops.data ) {
-    if( (hopToSearch.alphaAcidMin < ( alphaSearch.alphaAcidMin + 3 )) && (hopToSearch.alphaAcidMin > ( alphaSearch.alphaAcidMin - 3 ))) {
-      var resultAlpha = alphaSearch
-      console.log( resultAlpha )
-      // displayHops( resultAlpha )
+    if( (hopToSearch.alphaAcidMin < ( alphaSearch.alphaAcidMin + 1 )) && (hopToSearch.alphaAcidMin > ( alphaSearch.alphaAcidMin - 1 ))) {
+      if( alphaSearch.name != hopToSearch.name){
+        var resultHop = alphaSearch
+      }
     }
   }
+      console.log( resultHop )      
+  
 }
 
+
 // var displayHops = function( resultAlpha ) {
-  
+
 // }
 
 
