@@ -948,12 +948,14 @@ var displayRecipe = function( beer ) {
 };
 
 var hopSearch = function( hopToSearch ) {
+  var hopDisplay = document.getElementById( 'alternative-hops' );
+  hopDisplay.style.display = 'none';    
   for( searchHop of state.savedHops.data ) {
     if( hopToSearch.name === searchHop.name ) {
       console.log("hello")
       searchAlpha( searchHop )
-    }
-  }
+    } 
+  } 
 }
 
 
@@ -961,16 +963,17 @@ var searchAlpha = function( hopToSearch ) {
   var altHops = document.getElementById('altHops');
   altHops.innerHTML = ""
   for( alphaSearch of state.savedHops.data ) {
-    if( (hopToSearch.alphaAcidMin < ( alphaSearch.alphaAcidMin + 1 )) && (hopToSearch.alphaAcidMin > ( alphaSearch.alphaAcidMin - 1 ))) {
+    if( (hopToSearch.alphaAcidMin < ( alphaSearch.alphaAcidMin + 2 )) && (hopToSearch.alphaAcidMin > ( alphaSearch.alphaAcidMin - 2 ))) {
       if( alphaSearch.name != hopToSearch.name){
         var resultHop = alphaSearch
         var p = document.createElement( 'p' );
-        p.innerHTML = resultHop.name
+        p.innerHTML = resultHop.name + " instead of " + hopToSearch.name
         altHops.appendChild( p )
+        var hopDisplay = document.getElementById( 'alternative-hops' );
+        hopDisplay.style.display = 'block';
       }
     }
   }
-  console.log( resultHop.name )
 }
 
 
