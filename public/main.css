@@ -7,7 +7,7 @@ body {
 }
 
 select {
-  font-size: 20px;
+  font-size: 16px;
   background-color: #191919;
   color: white;
   display: block;
@@ -15,9 +15,12 @@ select {
   float: left;
 }
 
+
+
 #movingBanner {
   position: fixed;
-  padding: 5px 0;
+  padding-top: 5px;
+  padding-bottom: 2px;
   min-height: 35px;
   z-index: 5000;
   width: 100%;
@@ -27,11 +30,30 @@ select {
   top: 0;
 }
 
+#movingBanner li ul{
+  display: inline-block;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-right: auto;
+  margin-left: auto;
+  vertical-align: middle;
+  text-align: center;
+  font-weight: 600;
+  padding-left: 18px;
+}
+
+#movingBanner #beerLink {
+  padding-left: 52px;
+}
+
+a{
+  text-decoration: none;
+  color: #fff;
+}
+
 #logo {
-  display: block;
-  width: 45px;
-  float: right;
-  margin-right: 20px;
+  margin-top: 3px;
+  width: 40px;
 }
 
 #banner {
@@ -53,7 +75,7 @@ select {
   z-index: 10000;
   position: relative;
   left: 0;
-  margin-top: 55px;
+  margin-top: 56px;
   margin-bottom: 5px;
   font-size: 2em;
 }
@@ -73,9 +95,11 @@ select {
 #bannerImg {
   position: absolute;
   width: 100%;
-  top: 57px;
+  top: 50px;
   left: 0;
 }
+
+
 
 #main {
   padding-top: 250px;
@@ -135,11 +159,5 @@ select {
   max-width: 45%;
 }
 
-/*b {
-  font-family: 'Open Sans', sans-serif;
-}
 
-h4 {
-  font-family: 'Open Sans', sans-serif;
-}*/
 
